@@ -1,0 +1,20 @@
+X-Brainstorm MVC structure
+
+X-Create the SQL schema with migration
+
+X-Fetch API and populate "products" with seed
+
+X-Create random seeds for all other tables
+
+-Build route/controller/service logic for all requests
+    X-show product list (read)
+    X-show wishlist items by ID
+    Xwishlist item (create)
+    Xwishlist item (remove)
+    Xput item into cart/order (create)
+    Xremove item from cart (update)
+    Xpayment (update)
+
+(-Add tokens/refreshTokens/log-in function)
+
+(-Add Redis Cache)

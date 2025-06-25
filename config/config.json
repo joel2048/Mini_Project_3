@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "zecwid-vyqqIb-8mihmo",
+    "database": "shop",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "zecwid-vyqqIb-8mihmo",
+    "database": "shop",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "zecwid-vyqqIb-8mihmo",
+    "database": "shop",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
