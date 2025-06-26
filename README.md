@@ -5,7 +5,7 @@ Mini-Projet 3
   	see Figma screenshot and ToDo-List section
 -	Overview of application and its features:
 
-    eShop App for Yu-gi-oh Cards
+    eShop app for Yu-Gi-Oh cards
   	with the functions to
  	  - make user account
   	- view and sort products
