@@ -9,4 +9,7 @@ module.exports = {
 
   payOrder: (req, res) =>
     orderService.payOrder(req, res),
+
+  getCart: (req, res) =>
+    orderService.getCart(req, res),
 };

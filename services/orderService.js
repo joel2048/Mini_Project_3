@@ -9,11 +9,9 @@ module.exports = {
   async createOrderItem(req, res) {
     const { user_id, product_id, quantity } = req.body;
     if (!user_id || !product_id) {
-      return res
-        .status(400)
-        .json({
-          error: "order_id, user_id, product_id and quantity are required",
-        });
+      return res.status(400).json({
+        error: "order_id, user_id, product_id and quantity are required",
+      });
     }
     try {
       const id = Number(req.params.id);
@@ -100,5 +98,51 @@ module.exports = {
     }
   },
 
-  
+  async getCart(req, res) {
+    try {
+      const id = Number(req.params.id);
+      const page = parseInt(req.query.page) || 1;
+      const limit = parseInt(req.query.limit) || 10;
+      const offset = (page - 1) * limit;
+
+      const order = await Order.findOne({
+        where: { user_id: Number(id), is_payed: false },
+      });
+
+      if (order) {
+        const { count, rows: orderItems } = await OrderItem.findAndCountAll({
+          where: { user_id: Number(id), order_id: order.order_id },
+          include: [
+            {
+              model: Product,
+              attributes: ["product_name", "product_type", "price"],
+            },
+          ],
+          limit,
+          offset,
+        });
+
+        const response = {
+          total: count,
+          page,
+          totalPages: Math.ceil(count / limit),
+          orderItems,
+        };
+
+        if (orderItems.length > 0) {
+         res.json(response) 
+        } else {
+          res.json("no items in shopping cart");
+        }
+
+      } else {
+        res.json("no items in shopping cart");
+      }
+    } catch (err) {
+      res.status(500).json({
+        error: "Failed to retrieve shopping cart",
+        details: err.message,
+      });
+    }
+  },
 };
