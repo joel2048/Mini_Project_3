@@ -64,21 +64,21 @@ Mini-Projet 3
 
         X-show product list (read)
         
-        X-show wishlist items by ID
+        X-show wishlist items by ID (read)
         
         X-wishlist item (create)
         
-        X-wishlist item (remove)
+        X-wishlist item (delete)
         
         X-put item into cart/order (create)
         
-        X-remove item from cart (update)
+        X-remove item from cart (delete)
         
         X-payment (update)
         
-        X-showCart
+        X-showCart (read)
         
-        X-make OrderItem quantity increase instead of duplicates
+        X-make OrderItem quantity increase instead of duplicates (update)
         
         -calculate price total for Order
     
