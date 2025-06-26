@@ -55,14 +55,21 @@ module.exports = {
       return res.status(400).json({ error: "user_id and product_id are required" });
     }
     try {
-      await WishlistItem.create(
+      const item = await WishlistItem.findOne({
+        where: {user_id: user_id, product_id: product_id}
+      })
+
+      if (item) {
+        res.json("item already wishlisted")
+      } else {
+        await WishlistItem.create(
         {
           user_id,
           product_id,
         },
-      );
-
-      res.status(201).json({ message: "item created" });
+        );
+        res.status(201).json({ message: "item created" });
+      }
       
     } catch (err) {
       res.status(500).json({

@@ -25,7 +25,7 @@ Mini-Projet 3
   
       Create:
       
-      -wishlist item
+      -add wishlist item
         
       -put item into cart
       
@@ -63,6 +63,10 @@ Mini-Projet 3
     -Build route/controller/service logic for all requests
 
         X-show product list (read)
+
+        X-sort products by type (read)
+
+        X-sort products by price (read)
         
         X-show wishlist items by ID (read)
         
@@ -79,15 +83,15 @@ Mini-Projet 3
         X-showCart (read)
         
         X-make OrderItem quantity increase instead of duplicates (update)
+
+        X-prevent duplicate wishlist-item
         
         -calculate price total for Order
-    
-        -prevent duplicate wishlist-item
         
         -showPayedOrders
 
     optional:
-      -add tokens/refreshTokens/log-in function
+      -add tokens/refreshTokens/log-in and register function with bcrypt hash
       -add Redis cache
 
   
