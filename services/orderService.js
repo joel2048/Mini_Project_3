@@ -21,18 +21,34 @@ module.exports = {
         where: { user_id: Number(id), is_payed: false },
       });
 
+      //if existing cart
       if (order) {
-        await OrderItem.create({
-          user_id,
-          product_id,
-          order_id: order.order_id,
-          quantity,
+        const orderItem = await OrderItem.findOne({
+          where: { product_id: product_id, order_id: order.order_id},
         });
-      } else {
-        // if no existing unpayed cart, create it first
+        // with same product add quantity
+        if (orderItem) {
+          await OrderItem.increment('quantity',
+            { by: 1,
+              where: {product_id: product_id}
+            },
+          )
+        } else {
+          //if existing cart without same product create entry
+          await OrderItem.create({
+            user_id,
+            product_id,
+            order_id: order.order_id,
+            quantity,
+          });
+        }
+      }      
+
+      // if no existing unpayed cart, create it first
+      if (!order)  {
         const newOrder = await Order.create({ user_id });
 
-        const orderItem = await OrderItem.create({
+        const newItem = await OrderItem.create({
           user_id,
           product_id,
           order_id: newOrder.order_id,

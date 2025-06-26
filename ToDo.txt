@@ -15,8 +15,7 @@ X-Create random seeds for all other tables
     X-remove item from cart (update)
     X-payment (update)
     X-showCart
-
-    -make OrderItem quantity increase instead of duplicates
+    Xmake OrderItem quantity increase instead of duplicates
     -calculate price total for Order
     -showPayedOrders
 
