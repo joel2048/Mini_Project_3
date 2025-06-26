@@ -7,19 +7,14 @@ router.get(
   productController.getAllProducts
 );
 
-// router.get(
-//   "/products/type",
-//   productController.get
-// );
+router.get(
+  "/products/type",
+  productController.getProductByType
+);
 
-// router.get(
-//   "/products/pricedown",
-//   productController.get
-// );
-
-// router.get(
-//   "/products/priceup",
-//   productController.getP
-// );
+router.get(
+  "/products/price/:direction",
+  productController.getProductbyPrice
+);
 
 module.exports = router;
