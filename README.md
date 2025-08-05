@@ -1,5 +1,11 @@
-Mini-Projet 3:
-Shop App for YuGiOh Cards
+# Mini-Projet 3
+
+- Design SQL Structure
+- Create CRUD endpoints
+- Tokens
+- Redis Cache
+
+## Shop App for YuGiOh Cards
 
 -	What was your design process?:
 
