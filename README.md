@@ -1,17 +1,16 @@
-Mini-Projet 3
+Mini-Projet 3:
+Shop App for YuGiOh Cards
 
--	What was your requirements gathering and design process?:
+-	What was your design process?:
 
   	see Figma screenshot and ToDo-List section
 -	Overview of application and its features:
 
-    eShop app for Yu-Gi-Oh cards
-  	with the functions to
  	  - make user account
   	- view and sort products
   	- add items to wishlist
     - add items to cart
-    - order items from cart (simulated)
+    - order items from cart (create order entry, no payment)
 -	Where does the card data come from?:
 
     external API: https://db.ygoprodeck.com/api/v7/cardinfo.php
@@ -52,7 +51,7 @@ Mini-Projet 3
 
   ToDo: X = Done
 
-    X-Brainstorm MVC structure
+    X-Brainstorm entity structure
 
     X-Create the SQL schema with migration
     
@@ -60,7 +59,7 @@ Mini-Projet 3
     
     X-Create random seeds for all other tables
 
-    -Build route/controller/service logic for all requests
+    Build route/controller/service logic for all requests:
 
         X-show product list (read)
 
